@@ -6,10 +6,9 @@ Solution Approach
 Use two pointers, fast and slow
 Advance fast pointer to the nth postion
 if fast is none return head.next value
-else
-now move slow and fast pointer till fast is not pointing to null
+else move slow and fast pointer till fast is at the last (fast.next is null)
 now these pointers are n position apart and slow 
-is one pointer away from the item to be delete, so delete slow.next
+is one pointer shy from the item to be delete, so delete slow.next
 
 """
 class SingleLinkedList:
@@ -39,7 +38,7 @@ def remove_nth_node_from_last(head: SingleLinkedList, n: int) -> SingleLinkedLis
         # now move both fast pointer and slow pointer
         fast_pointer = fast_pointer.next
         slow_pointer = slow_pointer.next
-    # now the slow pointer and fast pointers are n - 1 postions apart
+    # now the slow pointer and fast pointers are n postions apart
     # the slow pointer is one position away from the item to be deleted
     
     slow_pointer.next = slow_pointer.next.next # detete the slow pointers next 
